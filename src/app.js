@@ -1,5 +1,7 @@
-var firstTerm = 4;
-var secondTerm = 7;
+var max = 19;
+var min = 1;
+var firstTerm = Math.floor(Math.random() * (max - min + 1)) + min;
+var secondTerm = Math.floor(Math.random() * (20 - firstTerm - min + 1)) + min;
 var summ = firstTerm + secondTerm;
 var start = 0; 
 
@@ -20,12 +22,13 @@ secondTermNode.appendChild(document.createTextNode(secondTerm));
 
 var step = 39;
 
-function renderCircle(cx, cy, r) {
-	var circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+function renderCircle(cx, cy, rx) {
+	var circle = document.createElementNS("http://www.w3.org/2000/svg", 'ellipse');
 
 	circle.setAttribute('cx', cx);
 	circle.setAttribute('cy', cy);
-	circle.setAttribute('r', r);
+	circle.setAttribute('rx', rx);
+	circle.setAttribute('ry', 100);
 
 	circle.setAttribute('stroke', "rgb(143,23,23)");
 	circle.setAttribute('stroke-width', 2);
@@ -48,31 +51,28 @@ function renderArrow(firstTerm, secondTerm) {
 
 function onInputChange1(event) {
 	if (+input1.value === firstTerm) {
-		console.log('yes1');
 		input1.style.display = 'none';
 		input2.style.display = 'inline-block';
 		renderArrow(firstTerm, summ);
 	} else {
-		console.log('no1');
+		input1.style.color = 'red';
 	}
 }
 
 function onInputChange2(event) {
 	if (+input2.value === secondTerm) {
-		console.log('yes2');
 		input2.style.display = 'none';
 		input3.style.display = 'inline-block';
 	} else {
-		console.log('no2');
+		input2.style.color = 'red';
 	}
 }
 
 function onInputChange3(event) {
 	if (+input3.value === summ) {
-		console.log('yes3');
 		input3.style.display = 'none';
 	} else {
-		console.log('no3');
+		input3.style.color = 'red';
 	}
 }
 
