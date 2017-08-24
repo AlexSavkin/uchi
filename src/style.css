@@ -2,10 +2,6 @@
 	font-size: 20px;
 }
 
-input {
-	display: inline-block;
-}
-
 .body__content {
 	width: 100%;
 	max-width: 1200px;
@@ -37,15 +33,20 @@ input {
 }
 
 .question__input-wrap {
-	height: 50px;
+	position: absolute;
+	bottom: 110px;
+
 	width: 50px;
+
 	margin: 0 auto;
+
+	z-index: 1;
 }
 
 .question__input1,
 .question__input2,
 .question__input3 {
-	width: 100%;
+	width: 30px;
 }
 
 .question__input2,
